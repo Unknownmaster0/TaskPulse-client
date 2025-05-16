@@ -7,7 +7,7 @@ const BoardPage = () => {
   const boardData = useSelector((state: RootState) => state.board);
 
   return (
-    <div className="min-h-screen bg-gray-200">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <BoardHeader />
       <ListContainer lists={boardData.lists} />
     </div>

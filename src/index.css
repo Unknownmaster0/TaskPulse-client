@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Theme configuration */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,55 +12,58 @@
   -moz-osx-font-smoothing: grayscale;
 
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: oklch(0.95 0.02 240); /* Light grayish-blue for bright mode */
+  --foreground: oklch(0.2 0 0); /* Dark gray for bright mode text */
+  --card: oklch(1 0 0); /* White card background */
+  --card-foreground: oklch(0.2 0 0); /* Dark gray card text */
+  --header-bg: oklch(0.65 0.15 240); /* Blue header for bright mode */
+  --header-fg: oklch(1 0 0); /* White header text */
+  --list-bg: oklch(0.98 0.01 240); /* Very light grayish-blue for lists */
+  --list-fg: oklch(0.2 0 0); /* Dark gray list text */
+  --primary: oklch(0.65 0.15 240); /* Blue for buttons */
+  --primary-foreground: oklch(1 0 0); /* White button text */
+  --secondary: oklch(0.97 0 0); /* Light gray for secondary elements */
+  --secondary-foreground: oklch(0.2 0 0); /* Dark gray */
+  --muted: oklch(0.97 0 0); /* Light gray for muted elements */
+  --muted-foreground: oklch(0.5 0 0); /* Medium gray */
+  --accent: oklch(0.97 0 0); /* Light gray for accents */
+  --accent-foreground: oklch(0.2 0 0); /* Dark gray */
+  --destructive: oklch(0.577 0.245 27.325); /* Red for destructive actions */
+  --destructive-foreground: oklch(0.985 0 0); /* White */
+  --border: oklch(0.85 0.02 240); /* Light grayish-blue border */
+  --input: oklch(0.98 0.01 240); /* Very light grayish-blue for inputs */
+  --ring: oklch(0.65 0.15 240); /* Blue for focus rings */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --background: oklch(0.15 0 0); /* Dark gray for dark mode */
+  --foreground: oklch(0.9 0 0); /* Light gray for dark mode text */
+  --card: oklch(0.25 0 0); /* Darker gray for cards */
+  --card-foreground: oklch(0.9 0 0); /* Light gray card text */
+  --header-bg: oklch(0.35 0.15 240); /* Darker blue header for dark mode */
+  --header-fg: oklch(0.9 0 0); /* Light gray header text */
+  --list-bg: oklch(0.2 0 0); /* Dark gray for lists */
+  --list-fg: oklch(0.9 0 0); /* Light gray list text */
+  --primary: oklch(0.5 0.15 240); /* Darker blue for buttons */
+  --primary-foreground: oklch(0.9 0 0); /* Light gray button text */
+  --secondary: oklch(0.3 0 0); /* Dark gray for secondary elements */
+  --secondary-foreground: oklch(0.9 0 0); /* Light gray */
+  --muted: oklch(0.3 0 0); /* Dark gray for muted elements */
+  --muted-foreground: oklch(0.6 0 0); /* Medium gray */
+  --accent: oklch(0.3 0 0); /* Dark gray for accents */
+  --accent-foreground: oklch(0.9 0 0); /* Light gray */
+  --destructive: oklch(0.704 0.191 22.216); /* Darker red for destructive actions */
+  --destructive-foreground: oklch(0.985 0 0); /* White */
+  --border: oklch(0.3 0 0 / 0.5); /* Semi-transparent dark gray border */
+  --input: oklch(0.25 0 0); /* Dark gray for inputs */
+  --ring: oklch(0.5 0.15 240); /* Darker blue for focus rings */
 }
-
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--background); /* Use the theme variable */
+  background-color: var(--background);
   color: var(--foreground);
 }
 
@@ -77,14 +79,4 @@ a:hover {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
 }

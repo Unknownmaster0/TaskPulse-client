@@ -37,30 +37,36 @@ const AddButton = ({ label, type, listId }: AddButtonProps) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+        <Button className="w-full bg-blue-500 dark:bg-blue-700 text-white dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-800">
           {label}
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-background text-foreground">
+      <DialogContent className="bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200">
         <DialogHeader>
-          <DialogTitle>{type === "list" ? "Add New List" : "Add New Card"}</DialogTitle>
+          <DialogTitle>
+            {type === "list" ? "Add New List" : "Add New Card"}
+          </DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <Input
             placeholder="Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="bg-input text-foreground"
+            className="bg-gray-50 dark:bg-gray-600 text-gray-800 dark:text-gray-200 border-gray-300 dark:border-gray-500"
           />
           {type === "card" && (
             <Input
               placeholder="Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="bg-input text-foreground"
+              className="bg-gray-50 dark:bg-gray-600 text-gray-800 dark:text-gray-200 border-gray-300 dark:border-gray-500"
             />
           )}
-          <Button onClick={handleSubmit} disabled={!title}>
+          <Button
+            onClick={handleSubmit}
+            disabled={!title}
+            className="bg-blue-500 dark:bg-blue-700 text-white dark:text-gray-200 hover:bg-blue-600 dark:hover:bg-blue-800"
+          >
             Add
           </Button>
         </div>

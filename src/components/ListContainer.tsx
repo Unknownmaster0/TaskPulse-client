@@ -8,8 +8,8 @@ interface ListContainerProps {
 
 const ListContainer = ({ lists }: ListContainerProps) => {
   return (
-    <div className="flex space-x-4 p-4 overflow-x-auto">
-      {lists.map(list => (
+    <div className="flex space-x-4 p-4 overflow-x-auto bg-gray-100 dark:bg-gray-900">
+      {lists.map((list) => (
         <List key={list.id} list={list} />
       ))}
       <div className="w-72 flex-shrink-0">

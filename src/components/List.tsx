@@ -8,8 +8,8 @@ interface ListProps {
 
 const List = ({ list }: ListProps) => {
   return (
-    <div className="bg-gray-100 p-3 rounded-lg w-72 flex-shrink-0">
-      <h2 className="text-lg font-semibold text-gray-800 mb-3">{list.title}</h2>
+    <div className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-3 rounded-lg w-72 flex-shrink-0 border border-gray-300 dark:border-gray-600">
+      <h2 className="text-lg font-semibold mb-3">{list.title}</h2>
       {list.cards.map((card) => (
         <Card key={card.id} listId={list.id} card={card} />
       ))}
